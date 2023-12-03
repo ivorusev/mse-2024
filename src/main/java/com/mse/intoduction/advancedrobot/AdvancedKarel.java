@@ -39,6 +39,9 @@ public class AdvancedKarel extends Robot {
 
     @Override
     public void move() {
+        if (!frontIsClear()) {
+            throw new HitAWallException("Cannot move");
+        }
         if (facingEast()) {
             point.x = point.x + 1;
         } else if (facingWest()) {

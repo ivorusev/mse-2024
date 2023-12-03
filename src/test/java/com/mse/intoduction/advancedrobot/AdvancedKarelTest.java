@@ -1,15 +1,15 @@
 package com.mse.intoduction.advancedrobot;
 
 import kareltherobot.Directions;
-import kareltherobot.Robot;
 import kareltherobot.World;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class AdvancedRobotTest {
+public class AdvancedKarelTest {
 
     @Before
     public void init() {
@@ -66,5 +66,13 @@ public class AdvancedRobotTest {
         assertEquals(robot.getPoint().x, 3);
         assertEquals(robot.getPoint().y, 3);
         assertTrue(robot.facingEast());
+    }
+
+    @Test
+    public void testMoveThroughAWall() {
+        AdvancedKarel robot = new AdvancedKarel(1, 1, Directions.West);
+        HitAWallException hitAWallException = assertThrows(HitAWallException.class, robot::move);
+        String actualMessage = hitAWallException.getMessage();
+        assertEquals("Cannot move", actualMessage);
     }
 }
