@@ -15,8 +15,8 @@ public class ShoppingListTest {
         ShoppingList list = new ShoppingList(products);
         Product product = new Product("vodka", 10, 10);
         list.add(product);
-        assertEquals(1, list.getProducts().size());
-        assertEquals(list.getProducts().get(0).getName(), "vodka");
+        assertEquals(1, list.products().size());
+        assertEquals(list.products().get(0).getName(), "vodka");
     }
 
 }

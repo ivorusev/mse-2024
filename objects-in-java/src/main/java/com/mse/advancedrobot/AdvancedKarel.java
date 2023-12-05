@@ -106,7 +106,6 @@ public class AdvancedKarel extends Robot {
      * @param y the y coordinate of the destination
      */
     public void moveTo(int x, int y) {
-        Direction initialDirection = this.getDirection();
         if (this.point.x < x) {
             this.turnTo(Directions.East);
             while (point.x < x) {

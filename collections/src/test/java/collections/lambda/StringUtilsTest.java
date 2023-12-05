@@ -17,8 +17,7 @@ public class StringUtilsTest {
 
     @Test
     void testIsCapitalWithNullString() {
-        String input = null;
-        boolean actual = StringUtils.isCapital(input);
+        boolean actual = StringUtils.isCapital(null);
         assertFalse(actual);
     }
 
